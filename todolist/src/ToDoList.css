@@ -1,0 +1,50 @@
+.task-management-app {
+    color: #333;
+}
+
+.navbar {
+    background-color: #4c2a85;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+.task-columns {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.task-column {
+    width: 30%;
+    margin-right: 10px;
+}
+
+    .task-column h2 {
+        color: #4c2a85;
+        margin-bottom: 10px;
+    }
+
+.task-card {
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
+    padding: 10px;
+    position: relative;
+}
+
+.importance-indicator {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.task-details .category,
+.task-details .due-date,
+.task-details .estimate {
+    margin-bottom: 5px;
+}

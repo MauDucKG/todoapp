@@ -20,11 +20,11 @@ namespace ToDoList_API.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetToDoLists([FromQuery]string? filterOn, [FromQuery] string? filterText)
+        public async Task<IActionResult> GetToDoLists([FromQuery] string? filterOn, [FromQuery] string? filterText)
         {
-            -   if(filterOn is not null && filterText is not null)
+            if (filterOn is not null && filterText is not null)
             {
-                if(filterOn.Equals("status",StringComparison.OrdinalIgnoreCase))
+                if (filterOn.Equals("status", StringComparison.OrdinalIgnoreCase))
                 {
                     var filterStatus = (Status)Enum.Parse(typeof(Status), filterText);
 

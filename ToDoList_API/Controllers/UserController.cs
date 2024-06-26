@@ -143,7 +143,7 @@ public class UserController : ControllerBase
         user.LastName = profileUpdate.LastName;
         user.Email = profileUpdate.Email;
         (user.Password, user.Salt) = HashPassword(profileUpdate.Password);
-        user.ProfilePicture= profileUpdate.ProfilePicture;
+        user.ProfilePicture = profileUpdate.ProfilePicture;
         await _dbContext.SaveChangesAsync();
         var newClaims = new[]
         {

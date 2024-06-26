@@ -1,0 +1,26 @@
+version: "3.4"
+
+services:
+  postgres:
+    image: postgres:13
+    environment:
+      POSTGRES_DB: ToDoList
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: duc
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  webapp:
+    build: .
+    ports:
+      - "5089:5089"
+      - "7260:7260"
+    depends_on:
+      - postgres
+    environment:
+      - ConnectionStrings__ToDoListApiConnectionString=Host=postgres;Port=5432;Database=ToDoList;UserID=postgres;Password=duc;
+
+volumes:
+  postgres_data:
